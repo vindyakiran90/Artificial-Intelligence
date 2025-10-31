@@ -3,8 +3,7 @@
 **Author:** Vindya Kiran Jain  
 **File:** `Statistics_Assignment_Vindya_Kiran_Jain.ipynb`  
 **Course:** Artificial Intelligence  
-**Module:** Statistical Foundations for AI  
-**Date:** [Insert Submission Date]
+**Module:** Statistical Foundations for AI
 
 ---
 
