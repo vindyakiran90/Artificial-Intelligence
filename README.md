@@ -4,8 +4,7 @@
 **Author:** Vindya Kiran Jain  
 **File:** `ML_Day_01_Assignment_Vindya_Kiran_Jain.ipynb`  
 **Course:** Artificial Intelligence & Machine Learning  
-**Module:** Machine Learning  
-**Date:** [Insert Submission Date]
+**Module:** Machine Learning
 
 ---
 
