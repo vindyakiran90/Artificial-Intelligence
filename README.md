@@ -1,69 +1,47 @@
-# 🔢 Linear Algebra – Day 01 Assignment  
-**Topic:** Gradient Descent vs Adam Optimizer  
+# 🔷 Linear Algebra – Day 04 Assignment  
+**Topic:** Spectral Clustering using Graph Laplacian and Eigen Decomposition  
 
 **Author:** Vindya Kiran Jain  
-**File:** `Day_01_Linear_Algebra_Assignment_AI10_Vindya_Kiran_Jain.ipynb`  
+**File:** `Day_04_Linear_Algebra_Assignment_Vindya_Kiran_Jain.ipynb`  
 **Course:** Artificial Intelligence & Machine Learning  
-**Module:** Linear Algebra for AI  
-**Date:** [Insert Submission Date]
-
+**Module:** Linear Algebra for AI
 ---
 
 ## 📘 Overview
 
-This assignment explores **optimization techniques** used in **Linear Regression**, comparing the performance of **Vanilla Gradient Descent** and the **Adam Optimizer**.  
+This notebook explores **Spectral Clustering**, a graph-based clustering algorithm that utilizes **eigenvalues** and **eigenvectors** of a **graph Laplacian** to detect complex, non-linearly separable clusters.  
 
-Both methods are applied to a **synthetic dataset**, and their convergence patterns are analyzed through visualizations and error metrics.
-
----
-
-## 🧩 Objectives
-
-1. Implement **Linear Regression** from scratch using **NumPy**.  
-2. Compare **Vanilla Gradient Descent** with **Adam Optimizer**.  
-3. Visualize and analyze model convergence behavior.  
-4. Summarize performance, stability, and efficiency observations.
+Unlike traditional algorithms like *k-means*, which assume convex clusters in Euclidean space, spectral clustering leverages **graph theory and linear algebra** to uncover intrinsic data structures.
 
 ---
 
-## 📂 File Description
+## 🧩 Key Concepts
 
-| File Name | Description |
-|------------|-------------|
-| `Day_01_Linear_Algebra_Assignment_AI10_Vindya_Kiran_Jain.ipynb` | Jupyter Notebook implementing Linear Regression using both Gradient Descent and Adam optimization algorithms. |
+### 1️⃣ Similarity Graph
+- Represents data points as **nodes** and their pairwise relationships as **edges**.
+- Edge weights represent **similarity** between data points (often computed via Gaussian RBF kernel).
 
----
+### 2️⃣ Degree Matrix (D)
+- A diagonal matrix where each diagonal element represents the **sum of edge weights** connected to a node.
 
-## ⚙️ Implementation Details
+### 3️⃣ Graph Laplacian (L)
+\[
+L = D - W
+\]
+Where:
+- **D** = Degree matrix  
+- **W** = Adjacency (similarity) matrix  
 
-### **1️⃣ Dataset**
-- A synthetic dataset is generated using NumPy:
-  \[
-  y = 3x + 7 + \text{noise}
-  \]
-- 400 samples with Gaussian noise.
+The Laplacian captures the structure of the graph and is crucial for understanding cluster connectivity.
 
-### **2️⃣ Model**
-- Linear Regression Model:  
-  \[
-  \hat{y} = w_1x + w_0
-  \]
-- Loss Function: **Mean Squared Error (MSE)**
+### 4️⃣ Eigen Decomposition
+- Eigenvalues and eigenvectors of \( L \) provide insights into the **connected components** of the graph.  
+- The smallest eigenvalues correspond to **smooth variations** across clusters.
 
----
+### 5️⃣ Spectral Embedding
+- The top \( k \) eigenvectors (smallest non-zero eigenvalues) are used to **embed data points** into a lower-dimensional space.
 
-## 🚀 Gradient Descent Variants Implemented
-
-### **🧮 Vanilla Gradient Descent**
-- Fixed learning rate = `0.01`  
-- Updates weights in the direction of the negative gradient.  
-- Slower convergence, sensitive to learning rate.  
-
-### **⚡ Adam Optimizer**
-- Adaptive learning rates using **momentum** and **RMSProp**.  
-- Hyperparameters:
-  - Learning Rate: `0.05`
-  - β₁ = 0.9, β₂ = 0.999, ε = 1e-8
-- Converges faster and more stable for noisy gradients.
+### 6️⃣ Clustering in Embedded Space
+- After embedding, **k-means** or another clustering algorithm is applied to the transformed data to obtain final clusters.
 
 ---
